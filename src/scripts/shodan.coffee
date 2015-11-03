@@ -28,9 +28,9 @@ module.exports = (robot) ->
       robot.http(request_url)
         .get() (err, res, body) ->
 
-          if res.statusCode is 200
-            shodan_json = JSON.parse body
-            res.send shodan_json
+    #      if res.statusCode is 200
+          shodan_json = JSON.parse body
+          res.send shodan_json
     #
     #         if shodan_json.error
     #           shodan_profile = "Shodan didn't tell me anything useful about #{shodan_term}"
