@@ -30,7 +30,7 @@ module.exports = (robot) ->
 
     #      if res.statusCode is 200
           shodan_json = JSON.parse body
-          res.send shodan_json
+          msg.send shodan_json
     #
     #         if shodan_json.error
     #           shodan_profile = "Shodan didn't tell me anything useful about #{shodan_term}"
