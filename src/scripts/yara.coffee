@@ -15,11 +15,20 @@
 
 module.exports = (robot) ->
   robot.respond /yara template/i, (msg) ->
+    #name (*.) cat (*.) 
     # Default Values
     yara_rule_name = "rule_name"
     yara_rule_category = "category"
-    yara_meta_author = "Hubot"
-    yara_meta_date = "2013-01-01"
+    yara_meta_author = msg.user.name
+    today = new date
+    dd = today.getDate()
+    mm = today.getMonth() + 1
+    yyyy = today.getFullYear()
+    if dd < 10
+      dd = '0' + dd
+    if mm < 10
+      mm = '0' + mm
+    yara_meta_date = yyyy + "-" + mm + "-" + dd
     yara_meta_description = "Default Rule Template"
     yara_strings_list = ['foo', 'bar', 'baz']
 
