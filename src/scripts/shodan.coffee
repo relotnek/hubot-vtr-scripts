@@ -25,7 +25,7 @@ module.exports = (robot) ->
 
       request_url = api_url + "/shodan/host/#{shodan_term}?key=#{SHODAN_API_KEY}"
 
-      robot.http(request_url)
+      robot.https(request_url)
         .get() (err, res, body) ->
 
           if res.statusCode is 200
