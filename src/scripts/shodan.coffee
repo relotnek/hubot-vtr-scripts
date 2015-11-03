@@ -15,7 +15,7 @@
 
 SHODAN_API_KEY = process.env.SHODAN_API_KEY
 
-api_url = "http://www.shodanhq.com"
+api_url = "https://api.shodan.io"
 
 module.exports = (robot) ->
   robot.respond /shodan (.*)/i, (msg) ->
@@ -23,7 +23,7 @@ module.exports = (robot) ->
     if SHODAN_API_KEY?
       shodan_term = msg.match[1].toLowerCase()
 
-      request_url = api_url + "/api/host?key=#{SHODAN_API_KEY}&ip=#{shodan_term}"
+      request_url = api_url + "/shodan/host/#{shodan_term}?key=#{SHODAN_API_KEY}"
 
       robot.http(request_url)
         .get() (err, res, body) ->
