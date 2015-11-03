@@ -15,11 +15,11 @@
 
 module.exports = (robot) ->
   robot.respond /yara template/i, (msg) ->
-    #name (*.) cat (*.) 
+    # name (*.) cat (*.)
     # Default Values
     yara_rule_name = "rule_name"
     yara_rule_category = "category"
-    yara_meta_author = msg.user.name
+    yara_meta_author = msg.message.user.name
     today = new date
     dd = today.getDate()
     mm = today.getMonth() + 1
