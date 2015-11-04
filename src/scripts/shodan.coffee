@@ -43,12 +43,12 @@ module.exports = (robot) ->
 
               """
 
-              for host in shodan_json.data
-                banner_array = host.banner.split "\r\n"
-
-                banner_string = ""
-                banner_string += " - #{banner_item}\n" for banner_item in banner_array when banner_item != ''
-                shodan_profile += "\n~ #{host.ip}\n------\n- Hostname:     #{host.hostnames.toString()}\n- Organization: #{host.org}\n- Port:         #{host.port}\n- Banner:       \n#{banner_string}"
+              # for host in shodan_json.data
+              #   banner_array = host.banner.split "\r\n"
+              #
+              #   banner_string = ""
+              #   banner_string += " - #{banner_item}\n" for banner_item in banner_array when banner_item != ''
+              #   shodan_profile += "\n~ #{host.ip}\n------\n- Hostname:     #{host.hostnames.toString()}\n- Organization: #{host.org}\n- Port:         #{host.port}\n- Banner:       \n#{banner_string}"
 
               msg.send shodan_profile
           else
